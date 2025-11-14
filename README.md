@@ -224,75 +224,77 @@ terraform output website_url
 ---
 
 ## 📁 Project Structure
+```bash
 aws-3tier-production/
 ├── README.md
 ├── LICENSE
 ├── .gitignore
 ├── backend-setup.sh
-│
+
 ├── terraform/
-│ ├── main.tf # Root module
-│ ├── variables.tf # Input variables
-│ ├── outputs.tf # Output values
-│ ├── terraform.tfvars.example # Example configuration
-│ ├── backend.tf # Remote state config
-│ ├── providers.tf # Provider configuration
-│ ├── monitoring.tf # CloudWatch dashboards
-│ │
-│ ├── modules/
-│ │ ├── networking/ # VPC, subnets, routing
-│ │ │ ├── main.tf
-│ │ │ ├── variables.tf
-│ │ │ └── outputs.tf
-│ │ │
-│ │ ├── security/ # Security groups, IAM
-│ │ │ ├── main.tf
-│ │ │ ├── iam.tf
-│ │ │ ├── variables.tf
-│ │ │ └── outputs.tf
-│ │ │
-│ │ ├── compute/ # EC2, ASG, ALB
-│ │ │ ├── main.tf
-│ │ │ ├── alb.tf
-│ │ │ ├── user_data_web.sh
-│ │ │ ├── user_data_app.sh
-│ │ │ ├── variables.tf
-│ │ │ └── outputs.tf
-│ │ │
-│ │ ├── database/ # RDS PostgreSQL
-│ │ │ ├── main.tf
-│ │ │ ├── variables.tf
-│ │ │ └── outputs.tf
-│ │ │
-│ │ ├── storage/ # S3 buckets
-│ │ │ ├── main.tf
-│ │ │ ├── variables.tf
-│ │ │ └── outputs.tf
-│ │ │
-│ │ ├── cdn/ # CloudFront
-│ │ │ ├── main.tf
-│ │ │ ├── variables.tf
-│ │ │ └── outputs.tf
-│ │ │
-│ │ └── dns/ # Route53
-│ │ ├── main.tf
-│ │ ├── variables.tf
-│ │ └── outputs.tf
-│ │
-│ └── environments/
-│ ├── dev.tfvars
-│ ├── staging.tfvars
-│ └── prod.tfvars
+│   ├── main.tf                      # Root module
+│   ├── variables.tf                 # Input variables
+│   ├── outputs.tf                   # Output values
+│   ├── terraform.tfvars.example     # Example configuration
+│   ├── backend.tf                   # Remote state config
+│   ├── providers.tf                 # Provider configuration
+│   ├── monitoring.tf                # CloudWatch dashboards
+│
+│   ├── modules/
+│   │   ├── networking/              # VPC, subnets, routing
+│   │   │   ├── main.tf
+│   │   │   ├── variables.tf
+│   │   │   └── outputs.tf
+│   │
+│   │   ├── security/                # Security groups, IAM
+│   │   │   ├── main.tf
+│   │   │   ├── iam.tf
+│   │   │   ├── variables.tf
+│   │   │   └── outputs.tf
+│   │
+│   │   ├── compute/                 # EC2, ASG, ALB
+│   │   │   ├── main.tf
+│   │   │   ├── alb.tf
+│   │   │   ├── user_data_web.sh
+│   │   │   ├── user_data_app.sh
+│   │   │   ├── variables.tf
+│   │   │   └── outputs.tf
+│   │
+│   │   ├── database/                # RDS PostgreSQL
+│   │   │   ├── main.tf
+│   │   │   ├── variables.tf
+│   │   │   └── outputs.tf
+│   │
+│   │   ├── storage/                 # S3 buckets
+│   │   │   ├── main.tf
+│   │   │   ├── variables.tf
+│   │   │   └── outputs.tf
+│   │
+│   │   ├── cdn/                     # CloudFront distribution
+│   │   │   ├── main.tf
+│   │   │   ├── variables.tf
+│   │   │   └── outputs.tf
+│   │
+│   │   └── dns/                     # Route53 DNS
+│   │       ├── main.tf
+│   │       ├── variables.tf
+│   │       └── outputs.tf
+│
+│   └── environments/
+│       ├── dev.tfvars
+│       ├── staging.tfvars
+│       └── prod.tfvars
 │
 ├── .github/
-│ └── workflows/
-│ └── terraform.yml # CI/CD pipeline
+│   └── workflows/
+│       └── terraform.yml            # CI/CD pipeline
 │
 └── docs/
-├── ARCHITECTURE.md
-├── DEPLOYMENT.md
-├── TROUBLESHOOTING.md
-└── COST_OPTIMIZATION.md
+    ├── ARCHITECTURE.md
+    ├── DEPLOYMENT.md
+    ├── TROUBLESHOOTING.md
+    └── COST_OPTIMIZATION.md
+```
 
 
 ---
@@ -586,7 +588,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Aayush Soni**
 - GitHub: [@Aayushsoni09](https://github.com/yourusername)
-- LinkedIn: [LinkedIn]([https://linkedin.com/in/aayush-soni-09])
+- LinkedIn: [LinkedIn](https://linkedin.com/in/aayush-soni-09)
 - Portfolio: [Portfolio](https://www.monkweb.tech)
 
 ---
