@@ -1,21 +1,22 @@
-# Terraform
+# Terraform files
 **/.terraform/*
 *.tfstate
 *.tfstate.*
-*.tfvars
-!terraform.tfvars.example
 crash.log
 override.tf
-
-# AWS
+verride.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
+terraform.rc
+# Sensitive files
+*.tfvars
+!environments/*.tfvars
 *.pem
 *.key
-
-# Secrets
 .env
 secrets/
-
-# OS
+# OS files
 .DS_Store
 Thumbs.db
 
