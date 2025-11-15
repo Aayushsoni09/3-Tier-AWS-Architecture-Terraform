@@ -30,17 +30,16 @@ A complete, production-ready 3-tier web application architecture deployed on AWS
 
 This architecture implements a secure, scalable, and highly available 3-tier application using AWS services:
 
-Internet → CloudFront CDN → Route53 DNS
-↓
-Application Load Balancer (Public)
-↓
-Web Tier (EC2 Auto Scaling Group)
-↓
-Application Load Balancer (Internal)
-↓
-App Tier (EC2 Auto Scaling Group)
-↓
-RDS PostgreSQL (Multi-AZ)
+```mermaid
+flowchart TD
+
+    A[🌍 Internet] --> B[🌐 CloudFront CDN]
+    B --> C[🔎 Route53 DNS]
+    C --> D[🌐 Application Load Balancer (Public)]
+    D --> E[💻 Web Tier<br>(EC2 Auto Scaling Group)]
+    E --> F[🔐 Application Load Balancer (Internal)]
+    F --> G[⚙️ App Tier<br>(EC2 Auto Scaling Group)]
+    G --> H[🗄️ RDS PostgreSQL<br>(Multi-AZ)]
 
 
 ### Architecture Components
