@@ -20,6 +20,8 @@ secrets/
 .DS_Store
 Thumbs.db
 
-# IDE
+# IDE files
 .vscode/
 .idea/
+*.swp
+*.swo
