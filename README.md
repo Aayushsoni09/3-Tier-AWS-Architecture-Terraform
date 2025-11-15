@@ -33,14 +33,14 @@ This architecture implements a secure, scalable, and highly available 3-tier app
 ```mermaid
 flowchart TD
 
-    A[🌍 Internet] --> B[🌐 CloudFront CDN]
-    B --> C[🔎 Route53 DNS]
-    C --> D[🌐 Application Load Balancer - Public]
-    D --> E[💻 Web Tier - EC2 Auto Scaling Group]
-    E --> F[🔐 Application Load Balancer - Internal]
-    F --> G[⚙️ App Tier - EC2 Auto Scaling Group]
-    G --> H[🗄️ RDS PostgreSQL - Multi-AZ]
-
+    A[Internet] --> B[CloudFront CDN]
+    B --> C[Route53 DNS]
+    C --> D[Public Application Load Balancer]
+    D --> E[Web Tier - EC2 Auto Scaling Group]
+    E --> F[Internal Application Load Balancer]
+    F --> G[App Tier - EC2 Auto Scaling Group]
+    G --> H[RDS PostgreSQL - Multi-AZ]
+---
 
 ### Architecture Components
 
