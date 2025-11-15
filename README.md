@@ -35,11 +35,11 @@ flowchart TD
 
     A[🌍 Internet] --> B[🌐 CloudFront CDN]
     B --> C[🔎 Route53 DNS]
-    C --> D[🌐 Application Load Balancer (Public)]
-    D --> E[💻 Web Tier<br>(EC2 Auto Scaling Group)]
-    E --> F[🔐 Application Load Balancer (Internal)]
-    F --> G[⚙️ App Tier<br>(EC2 Auto Scaling Group)]
-    G --> H[🗄️ RDS PostgreSQL<br>(Multi-AZ)]
+    C --> D[🌐 Application Load Balancer - Public]
+    D --> E[💻 Web Tier - EC2 Auto Scaling Group]
+    E --> F[🔐 Application Load Balancer - Internal]
+    F --> G[⚙️ App Tier - EC2 Auto Scaling Group]
+    G --> H[🗄️ RDS PostgreSQL - Multi-AZ]
 
 
 ### Architecture Components
