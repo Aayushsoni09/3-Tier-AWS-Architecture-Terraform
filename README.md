@@ -168,7 +168,8 @@ RDS PostgreSQL (Multi-AZ)
 ## 🚀 Quick Start
 
 ### 1. Clone the Repository
-- git clone https://github.com/Aayushsoni09/aws-3tier-production.git
+- git clone
+- https://github.com/Aayushsoni09/3-Tier-AWS-Architecture-Terraform
 - cd aws-3tier-production
 
 ### 2. Set Up Backend (One-Time)
@@ -587,7 +588,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👤 Author
 
 **Aayush Soni**
-- GitHub: [@Aayushsoni09](https://github.com/yourusername)
+- GitHub: [@Aayushsoni09](https://github.com/Aayushsoni09)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/aayush-soni-09)
 - Portfolio: [Portfolio](https://www.monkweb.tech)
 
