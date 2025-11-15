@@ -30,18 +30,18 @@ A complete, production-ready 3-tier web application architecture deployed on AWS
 
 This architecture implements a secure, scalable, and highly available 3-tier application using AWS services:
 
-Internet → CloudFront CDN → Route53 DNS
-↓
-Application Load Balancer (Public)
-↓
-Web Tier (EC2 Auto Scaling Group)
-↓
-Application Load Balancer (Internal)
-↓
-App Tier (EC2 Auto Scaling Group)
-↓
-RDS PostgreSQL (Multi-AZ)
+```mermaid
+flowchart TD
+    A[Internet] --> B[CloudFront CDN]
+    B --> C[Route53 DNS]
+    C --> D[Public Application Load Balancer]
+    D --> E[Web Tier - EC2 Auto Scaling Group]
+    E --> F[Internal Application Load Balancer]
+    F --> G[App Tier - EC2 Auto Scaling Group]
+    G --> H[RDS PostgreSQL - Multi-AZ]
+```
 
+---
 
 ### Architecture Components
 
@@ -170,7 +170,7 @@ RDS PostgreSQL (Multi-AZ)
 ### 1. Clone the Repository
 - git clone
 - https://github.com/Aayushsoni09/3-Tier-AWS-Architecture-Terraform
-- cd aws-3tier-production
+- cd 3-Tier-AWS-Architecture-Terraform
 
 ### 2. Set Up Backend (One-Time)
 - Create S3 bucket and DynamoDB table for Terraform state
@@ -180,12 +180,12 @@ RDS PostgreSQL (Multi-AZ)
 
 ## Update `terraform/backend.tf` with your bucket name:
 terraform {
-backend "s3" {
-bucket = "your-unique-bucket-name"
-key = "production/terraform.tfstate"
-region = "us-east-1"
-encrypt = true
-dynamodb_table = "terraform-state-lock"
+- backend "s3" {
+- bucket = "your-unique-bucket-name"
+- key = "production/terraform.tfstate"
+- region = "your region"
+- encrypt = true
+ -dynamodb_table = "terraform-state-lock"
 }
 }
 
@@ -194,11 +194,11 @@ dynamodb_table = "terraform-state-lock"
 - vim terraform.tfvars
 
 **Minimum required variables:**
-project_name = "my-app"
-environment = "dev"
-db_username = "admin"
-db_password = "YourSecurePassword123!"
-allowed_ssh_cidr = ["YOUR_IP/32"]
+- project_name = "my-app"
+- environment = "dev"
+- db_username = "admin"
+- db_password = "YourSecurePassword123!"
+- allowed_ssh_cidr = ["YOUR_IP/32"]
 
 
 ### 4. Deploy Infrastructure
@@ -305,14 +305,14 @@ aws-3tier-production/
 ### Environment-Specific Configurations
 
 **Development**
-terraform/environments/dev.tfvars
-environment = "dev"
-single_nat_gateway = true
-db_multi_az = false
-web_min_size = 1
-web_max_size = 2
-app_min_size = 1
-app_max_size = 2
+- terraform/environments/dev.tfvars
+- environment = "dev"
+- single_nat_gateway = true
+- db_multi_az = false
+- web_min_size = 1
+- web_max_size = 2
+- app_min_size = 1
+- app_max_size = 2
 
 **Production**
 - terraform/environments/prod.tfvars
@@ -525,13 +525,13 @@ infracost breakdown --path terraform/
 
 
 ### Application Tests
-Test ALB endpoint
+- Test ALB endpoint
 curl -I https://$(terraform output -raw alb_dns_name)
 
-Test health endpoint
+- Test health endpoint
 curl https://$(terraform output -raw cloudfront_domain_name)/health
 
-Load test with Apache Bench
+- Load test with Apache Bench
 ab -n 1000 -c 10 https://your-domain.com/
 
 ---
