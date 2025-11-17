@@ -93,21 +93,21 @@ resource "aws_s3_bucket_cors_configuration" "static_assets" {
 }
 
 # Bucket Policy for CloudFront OAI
-resource "aws_s3_bucket_policy" "static_assets" {
-  bucket = aws_s3_bucket.static_assets.id
+# resource "aws_s3_bucket_policy" "static_assets" {
+#   bucket = aws_s3_bucket.static_assets.id
 
-  policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Sid    = "AllowCloudFrontOAI"
-        Effect = "Allow"
-        Principal = {
-          AWS = var.cloudfront_oai_arn
-        }
-        Action   = "s3:GetObject"
-        Resource = "${aws_s3_bucket.static_assets.arn}/*"
-      }
-    ]
-  })
-}
+#   policy = jsonencode({
+#     Version = "2012-10-17"
+#     Statement = [
+#       {
+#         Sid    = "AllowCloudFrontOAI"
+#         Effect = "Allow"
+#         Principal = {
+#           AWS = var.cloudfront_oai_arn
+#         }
+#         Action   = "s3:GetObject"
+#         Resource = "${aws_s3_bucket.static_assets.arn}/*"
+#       }
+#     ]
+#   })
+#}

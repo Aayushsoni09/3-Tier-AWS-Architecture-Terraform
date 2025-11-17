@@ -14,8 +14,3 @@ variable "force_destroy" {
   default     = false
 }
 
-variable "cloudfront_oai_arn" {
-  description = "Cloudfront OAI ARN "
-  type = string
-  
-}

@@ -12,7 +12,7 @@ resource "aws_lb" "public" {
   idle_timeout              = 60
 
   access_logs {
-    bucket  = var.alb_logs_bucket
+    bucket  = aws_s3_bucket.alb_logs.bucket
     prefix  = "public-alb"
     enabled = true
   }
@@ -116,7 +116,7 @@ resource "aws_lb" "internal" {
   idle_timeout              = 60
 
   access_logs {
-    bucket  = var.alb_logs_bucket
+    bucket  = aws_s3_bucket.alb_logs.bucket
     prefix  = "internal-alb"
     enabled = true
   }
